@@ -1,0 +1,24 @@
+.content{
+    &__box{
+        display: inline-block;
+        justify-content: space-between;
+    }
+}
+.article{
+    &__subtext{
+        font-size: 14px;
+    }
+}
+.info-box{
+    position: relative;
+    .info-text{
+        &:before {
+            position: absolute;
+            content: url(/public/images/icons/info.svg);
+            left: 150px;
+            right: 0px;
+            bottom: -10px;
+        }
+    }
+    
+}

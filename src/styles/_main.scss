@@ -1,0 +1,11 @@
+.page{
+    &__contentainer{
+        margin: 50px 50px 50px 50px;
+    }
+    &__header{
+        max-width: 1000px;
+    }
+    &__content{
+        padding-top: 20px;
+    }
+}
