@@ -1,12 +1,31 @@
 .btn-default{
-    padding: 11px 44px;
+    width: 215px;
+    padding: 11px 4px;
     border-radius: 4px;
     background-color: #F0F6FF;
     color: #3861FB;
+    margin-right: 15px;
 }
 .btn-save{
-    padding: 11px 44px;
+    width: 215px;
+    padding: 11px 2px;
     border-radius: 4px;
     background-color: #3861FB;
     color: #FFFFFF;
+}
+.btn-option{
+    background-color: #EBEBEB;
+    color: #707070 ;
+    position: relative;
+    margin-right: 7px;
+    padding-right: 30px;
+    &:hover{
+        background-color: #e4e3e3;
+    }
+    &:before {
+        position: absolute;
+        content: url(/public/images/icons/dagger.svg);
+        right: 7px;
+        bottom: 1px;
+    }
 }

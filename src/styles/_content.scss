@@ -3,6 +3,7 @@
         display: inline-block;
         justify-content: space-between;
     }
+    
 }
 .article{
     &__subtext{
@@ -22,3 +23,16 @@
     }
     
 }
+select{
+    padding: 5px;
+    width: 225px;
+    border-color: #DDDDDD;
+    border-radius: 4px;
+    color: #858585;
+}
+option{
+    color: #858585;
+    border-radius: 0px;
+
+}
+

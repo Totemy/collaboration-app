@@ -40,7 +40,11 @@
             <input class="form-check-input" id="general-check-3" type="checkbox" checked>
           </div>
           <div class="col-3">
-            dropdown
+            <select  class="content__dropdown">
+              <option>Мгновенно</option>
+              <option>1 раз в день</option>
+              <option>Отключить</option>
+            </select>
           </div>
         </div>
       </div>
@@ -56,45 +60,71 @@
         </div>
         <div>
           <h4>Поисковые агенты</h4>
-          <div class="form-check form-switch">
-            <p>Бизнес</p>
-            <input placeholder="Seo">
-            <input placeholder="Продвижение">
-            <input pattern="Аналитика">
-            <a href="">Детали</a>
-            <div>
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-            </div>
-            <p>Поисковый агент присылает 1 письмо в неделю и только при условии, что найдены новые площадки</p>
-          </div>
-          <div class="form-check form-switch">
-            <p>123</p>
-            <input placeholder="Seo">
-            <input placeholder="Продвижение">
-            <input pattern="Аналитика">
-            <a href="">Детали</a>
-            <div>
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+          <div>
+            <div class="row">
+              <p>Бизнес</p>
+              <div class="col-4">
+                <button class="btn btn-option">Seo</button>
+                <button class="btn btn-option">Продвижение</button>
+                <button class="btn btn-option">Аналитика</button>
+              </div>
+              <div class="col-2">
+                <a href="">Детали</a>
+              </div>
+              <div class="col-1 form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+              </div>
+              <div class="col-3">
+                <p>Поисковый агент присылает 1 письмо в неделю и только при условии, что найдены новые площадки</p>
+              </div>
             </div>
           </div>
-          <div class="form-check form-switch">
-            <p>SEO</p>
-            <input placeholder="Seo">
-            <input placeholder="Продвижение">
-            <input pattern="Аналитика">
-            <a href="">Детали</a>
-            <div>
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-            </div>    
+          <div>
+            <div class="row">
+              <p>123</p>
+              <div class="col-4">
+                <button class="btn btn-option">Seo</button>
+                <button class="btn btn-option">Продвижение</button>
+              </div>
+              <div class="col-2">
+                <a href="">Детали</a>
+              </div>
+              <div class="col-1 form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+              </div>
+            </div>
           </div>
-          <div class="form-check form-switch">
-            <p>Бурж ссылки</p>
-            <input placeholder="Биржи ссылок: Не обнаружен">
-            <a href="">Детали</a>
-            <div>
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-            </div>    
+          <div>
+            <div class="row">
+              <p>SEO</p>
+              <div class="col-4">
+                <button class="btn btn-option" v-if="btn" @click="toggle">Seo</button>
+                <button class="btn btn-option">Продвижение</button>
+                <button class="btn btn-option">Аналитика</button>
+              </div>
+              <div class="col-2">
+                <a href="">Детали</a>
+              </div>
+              <div class="col-1 form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
+              </div>
+            </div>
           </div>
+          <div>
+            <div class="row">
+              <p>Бурж ссылки</p>
+              <div class="col-4">
+                <button class="btn btn-option">Биржи ссылок: Не обнаружен</button>
+              </div>
+              <div class="col-2">
+                <a href="">Детали</a>
+              </div>
+              <div class="col-1 form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
       <div class="page__content">
@@ -108,16 +138,11 @@
               <input class="form-check-input" id="ad-check-1" type="checkbox" checked>
             </div>
             <div class="col-3">
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Мгновенно
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Мгновенно</a></li>
-                  <li><a class="dropdown-item" href="#">1 раз в день</a></li>
-                  <li><a class="dropdown-item" href="#">Отключить</a></li>
-                </ul>
-              </div>
+              <select  class="content__dropdown">
+                <option>Мгновенно</option>
+                <option>1 раз в день</option>
+                <option>Отключить</option>
+              </select>
             </div>
           </div>
           <div class="row">
@@ -128,7 +153,11 @@
               <input class="form-check-input" id="ad-check-1" type="checkbox">
             </div>
             <div class="col-3">
-              
+              <select class="content__dropdown">
+                <option>Мгновенно</option>
+                <option>1 раз в день</option>
+                <option>Отключить</option>
+              </select>
             </div>
           </div>
         </div>
@@ -146,6 +175,16 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return{
+      btn: true
+    }
+  },
+  methods:{
+    toggle() {
+      this.btn = false;
+    }
   }
 }
 </script>
