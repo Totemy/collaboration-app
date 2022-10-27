@@ -69,7 +69,14 @@
                 <button class="btn btn-option">Аналитика</button>
               </div>
               <div class="col-2">
-                <a href="">Детали</a>
+                <button class="btn-detail" href="" id="show-modal" @click="showDetailModal = true">Детали</button>
+                <Teleport to="body">
+                  <detail-modal :show="showDetailModal" @save="saveAction()" @close="showDetailModal = false">
+                    <template #header>
+                      <p>Таким образом консультация с широким активом требуют от нас анализа модели развития.</p>
+                    </template>
+                  </detail-modal>
+                </Teleport>
               </div>
               <div class="col-1 form-check form-switch">
                 <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
@@ -87,7 +94,14 @@
                 <button class="btn btn-option">Продвижение</button>
               </div>
               <div class="col-2">
-                <a href="">Детали</a>
+                <button class="btn-detail" href="" id="show-modal" @click="showDetailModal = true">Детали</button>
+                <Teleport to="body">
+                  <detail-modal :show="showDetailModal" @save="saveAction()" @close="showDetailModal = false">
+                    <template #header>
+                      <p>Таким образом консультация с широким активом требуют от нас анализа модели развития.</p>
+                    </template>
+                  </detail-modal>
+                </Teleport>
               </div>
               <div class="col-1 form-check form-switch">
                 <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
@@ -103,7 +117,14 @@
                 <button class="btn btn-option">Аналитика</button>
               </div>
               <div class="col-2">
-                <a href="">Детали</a>
+                <button class="btn-detail" href="" id="show-modal" @click="showDetailModal = true">Детали</button>
+                <Teleport to="body">
+                  <detail-modal :show="showDetailModal" @save="saveAction()" @close="showDetailModal = false">
+                    <template #header>
+                      <p>Таким образом консультация с широким активом требуют от нас анализа модели развития.</p>
+                    </template>
+                  </detail-modal>
+                </Teleport>
               </div>
               <div class="col-1 form-check form-switch">
                 <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
@@ -117,7 +138,14 @@
                 <button class="btn btn-option">Биржи ссылок: Не обнаружен</button>
               </div>
               <div class="col-2">
-                <a href="">Детали</a>
+                <button class="btn-detail" href="" id="show-modal" @click="showDetailModal = true">Детали</button>
+                <Teleport to="body">
+                  <detail-modal :show="showDetailModal" @save="saveAction()" @close="showDetailModal = false">
+                    <template #header>
+                      <p>Таким образом консультация с широким активом требуют от нас анализа модели развития.</p>
+                    </template>
+                  </detail-modal>
+                </Teleport>
               </div>
               <div class="col-1 form-check form-switch">
                 <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
@@ -163,7 +191,14 @@
         </div>
       <div>
         <button class="btn btn-primary btn-default">По умолчанию</button>
-        <button class="btn btn-primary btn-save">Сохранить изменения</button>
+        <button class="btn btn-primary btn-save" id="show-modal" @click="showSaveModal = true">Сохранить изменения</button>
+                <Teleport to="body">
+                  <save-modal :show="showSaveModal" @save="saveAction()" @close="showSaveModal = false">
+                    <template #header>
+                      <h3>Вы уверены?</h3>
+                    </template>
+                  </save-modal>
+                </Teleport>
       </div>
     </div>
     
@@ -171,17 +206,29 @@
 </template>
 
 <script>
+import SaveModal from './SaveModal.vue';
+import DetailModal from './DetailModal.vue';
 export default {
   name: 'HelloWorld',
+  components: {
+    SaveModal,
+    DetailModal
+  },
   props: {
     msg: String
   },
   data() {
     return{
+      showDetailModal:false,
+      showSaveModal: false,
       btn: true
     }
   },
   methods:{
+    saveAction(){
+      alert("Сохранено");
+      this.showModal = false;
+    },
     toggle() {
       this.btn = false;
     }
