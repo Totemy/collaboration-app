@@ -1,4 +1,10 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import directives from "./directives/";
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+// register all directives
+directives(app);
+
+app.mount("#app");

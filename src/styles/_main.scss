@@ -1,6 +1,6 @@
 .page{
-    &__contentainer{
-        margin: 100px 50px 50px 100px;
+    &__container{
+        @include media-breakpoint-up(lg) { margin: 100px 50px 50px 100px;}
     }
     &__header{
         max-width: 1000px;

@@ -1,6 +1,8 @@
 @import "/node_modules/bootstrap/scss/bootstrap.scss";
 @import "variables";
 @import "buttons";
+@import "common";
 @import "main";
 @import "modal";
-@import "content"
+@import "tooltip";
+@import "content";

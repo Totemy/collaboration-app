@@ -1,172 +1,235 @@
 <template>
   <div class="page">
-    <div class="page__contentainer">
+    <div class="container page__container">
       <div class="page__header">
         <h1>Управление рассылками</h1>
-        <p>Здравствуйте, Андрей. Выберите, категории писем, от которых хотите отписаться. Но пожалуйста, исключите только те категории, которые действительно вас не интересуют. Мы обещаем слать только полезные письма где 😊</p>
+        <p>
+          Здравствуйте, Андрей. Выберите, категории писем, от которых хотите
+          отписаться. Но пожалуйста, исключите только те категории, которые
+          действительно вас не интересуют. Мы обещаем слать только полезные
+          письма где 😊
+        </p>
       </div>
       <div class="page__content">
         <h3><b>Общие уведомления</b></h3>
         <div class="row">
-          <div class="col-6">
-              <p>Приветственная серия</p>
+          <div class="col-10 col-lg-6 ">
+            <p>Приветственная серия</p>
           </div>
-          <div class="col-1 form-check form-switch">
-            <input class="form-check-input" id="general-check-1" type="checkbox" checked>
-          </div>
-          <div class="col-3">
-            <p class="article__subtext">4 полезных и емких письма в течение месяца</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-              <p>Образовательные вебинары</p>
-          </div>
-          <div class="col-1 form-check form-switch">
-            <input class="form-check-input" id="general-check-2" type="checkbox">
-          </div>
-          <div class="col-3">
-            <p class="article__subtext"> Бесплатные вебинары проходят 1 раз в 2 недели. Вы будете получать 2 письма с напоминанием о предстоящем вебинаре</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <div class="info-box">
-              <p class="info-text">Личные сообщения</p>
+          <div class="col-2 col-lg-1 ">
+            <div class="form-check form-switch">
+              <input
+                id="general-check-1"
+                class="form-check-input"
+                type="checkbox"
+                checked
+              />
             </div>
-            
           </div>
-          <div class="col-1 form-check form-switch">
-            <input class="form-check-input" id="general-check-3" type="checkbox" checked>
+          <div class="col-12 col-lg-3">
+            <p class="article__subtext">
+              4 полезных и емких письма в течение месяца
+            </p>
           </div>
-          <div class="col-3">
-            <select  class="content__dropdown">
+        </div>
+        <div class="row">
+          <div class="col-10 col-lg-6">
+            <p>Образовательные вебинары</p>
+          </div>
+          <div class="col-2 col-lg-1">
+            <div class=" form-check form-switch">
+              <input
+                id="general-check-2"
+                class="form-check-input"
+                type="checkbox"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-lg-3">
+            <p class="article__subtext">
+              Бесплатные вебинары проходят 1 раз в 2 недели. Вы будете получать
+              2 письма с напоминанием о предстоящем вебинаре
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10 col-lg-6">
+            <div class="info-box">
+              <p>
+                Личные сообщения
+                <TooltipItem
+                  position="right"
+                  :tooltip-text="'Письма об обновлениях и улучшениях платформы'"
+                >
+                  <img src="images/icons/info.svg" />
+                </TooltipItem>
+              </p>
+            </div>
+          </div>
+          <div class="col-2 col-lg-1 px-0">
+            <div class="form-check form-switch">
+              <input
+                id="general-check-3"
+                class="form-check-input"
+                type="checkbox"
+                checked
+              />
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-3">
+            <select class="content__dropdown">
               <option>Мгновенно</option>
               <option>1 раз в день</option>
               <option>Отключить</option>
             </select>
           </div>
         </div>
-      </div>
-      <div class="page__content">
-        <h3><b>Уведомление по Сайтам</b></h3>
-        <div class="row">
-          <div class="col-6">
-            <p>Новости</p>
+        <div class="page__content">
+          <h3>Уведомление по Сайтам</h3>
+          <div class="row">
+            <div class="col-10 col-lg-6">
+              <p>Новости</p>
+            </div>
+            <div class="col-2 col-lg-1 ">
+              <div class="form-check form-switch">
+                <input
+                  id="news-check"
+                  class="form-check-input"
+                  type="checkbox"
+                  checked
+                />
+              </div>
+            </div>
           </div>
-          <div class="col-1 form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="news-check" checked>
+          <div>
+            <h4>Поисковые агенты</h4>
+            <div>
+              <div class="row">
+                <p>Бизнес</p>
+                <div class="col-6 col-lg-4">
+                  <TagList :list="list1" @removeItem="removeListItem" />
+                </div>
+                <div class="col-4 col-lg-2">
+                  <DetailsSection>
+                    Повседневная практика показывает, что новая модель
+                    организационной деятельности влечет за собой процесс
+                    внедрения и модернизации существенных финансовых и
+                    административных условий
+                  </DetailsSection>
+                </div>
+                <div class="col-1 col-lg-1 ">
+                  <div class="form-check form-switch">
+                    <input
+                      id="flexSwitchCheckChecked"
+                      class="form-check-input"
+                      type="checkbox"
+                      checked
+                    />
+                  </div>
+                </div>
+                <div class="col-10 col-lg-3">
+                  <p>
+                    Поисковый агент присылает 1 письмо в неделю и только при
+                    условии, что найдены новые площадки
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="row">
+                <p>123</p>
+                <div class="col-6 col-lg-4">
+                  <TagList :list="list2" @removeItem="removeListItem" />
+                </div>
+                <div class="col-4 col-lg-2">
+                  <DetailsSection>
+                    Равным образом постоянное информационно-пропагандистское
+                    обеспечение нашей деятельности влечет за собой процесс
+                    внедрения и модернизации модели развития.
+                  </DetailsSection>
+                </div>
+                <div class="col-1 col-lg-1  ">
+                  <div class="form-check form-switch">
+                    <input
+                      id="flexSwitchCheckChecked"
+                      class="form-check-input"
+                      type="checkbox"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="row">
+                <p>SEO</p>
+                <div class="col-6 col-lg-4">
+                  <TagList :list="list3" @removeItem="removeListItem" />
+                </div>
+                <div class="col-4 col-lg-2">
+                  <DetailsSection>
+                    Разнообразный и богатый опыт новая модель организационной
+                    деятельности позволяет выполнять важные задания по
+                    разработке систем массового участия.
+                  </DetailsSection>
+                </div>
+                <div class="col-1 col-lg-1  ">
+                  <div class="form-check form-switch">
+                    <input
+                      id="flexSwitchCheckChecked"
+                      class="form-check-input"
+                      type="checkbox"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="row">
+                <p>Бурж ссылки</p>
+                <div class="col-6 col-lg-4">
+                  <TagList :list="list4" @removeItem="removeListItem" />
+                </div>
+                <div class="col-4 col-lg-2">
+                  <DetailsSection>
+                    Задача организации, в особенности же дальнейшее развитие
+                    различных форм деятельности влечет за собой процесс
+                    внедрения и модернизации форм развития.
+                  </DetailsSection>
+                </div>
+                <div class="col-1 col-lg-1">
+                  <div class=" form-check form-switch">
+                    <input
+                      id="flexSwitchCheckChecked"
+                      class="form-check-input"
+                      type="checkbox"
+                      checked
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div>
-          <h4>Поисковые агенты</h4>
-          <div>
-            <div class="row">
-              <p>Бизнес</p>
-              <div class="col-4">
-                <button class="btn btn-option">Seo</button>
-                <button class="btn btn-option">Продвижение</button>
-                <button class="btn btn-option">Аналитика</button>
-              </div>
-              <div class="col-2">
-                <button class="btn-detail" href="" id="show-modal" @click="showDetailModal = true">Детали</button>
-                <Teleport to="body">
-                  <detail-modal :show="showDetailModal" @save="saveAction()" @close="showDetailModal = false">
-                    <template #header>
-                      <p>Таким образом консультация с широким активом требуют от нас анализа модели развития.</p>
-                    </template>
-                  </detail-modal>
-                </Teleport>
-              </div>
-              <div class="col-1 form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-              </div>
-              <div class="col-3">
-                <p>Поисковый агент присылает 1 письмо в неделю и только при условии, что найдены новые площадки</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="row">
-              <p>123</p>
-              <div class="col-4">
-                <button class="btn btn-option">Seo</button>
-                <button class="btn btn-option">Продвижение</button>
-              </div>
-              <div class="col-2">
-                <button class="btn-detail" href="" id="show-modal" @click="showDetailModal = true">Детали</button>
-                <Teleport to="body">
-                  <detail-modal :show="showDetailModal" @save="saveAction()" @close="showDetailModal = false">
-                    <template #header>
-                      <p>Таким образом консультация с широким активом требуют от нас анализа модели развития.</p>
-                    </template>
-                  </detail-modal>
-                </Teleport>
-              </div>
-              <div class="col-1 form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="row">
-              <p>SEO</p>
-              <div class="col-4">
-                <button class="btn btn-option" v-if="btn" @click="toggle">Seo</button>
-                <button class="btn btn-option">Продвижение</button>
-                <button class="btn btn-option">Аналитика</button>
-              </div>
-              <div class="col-2">
-                <button class="btn-detail" href="" id="show-modal" @click="showDetailModal = true">Детали</button>
-                <Teleport to="body">
-                  <detail-modal :show="showDetailModal" @save="saveAction()" @close="showDetailModal = false">
-                    <template #header>
-                      <p>Таким образом консультация с широким активом требуют от нас анализа модели развития.</p>
-                    </template>
-                  </detail-modal>
-                </Teleport>
-              </div>
-              <div class="col-1 form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="row">
-              <p>Бурж ссылки</p>
-              <div class="col-4">
-                <button class="btn btn-option">Биржи ссылок: Не обнаружен</button>
-              </div>
-              <div class="col-2">
-                <button class="btn-detail" href="" id="show-modal" @click="showDetailModal = true">Детали</button>
-                <Teleport to="body">
-                  <detail-modal :show="showDetailModal" @save="saveAction()" @close="showDetailModal = false">
-                    <template #header>
-                      <p>Таким образом консультация с широким активом требуют от нас анализа модели развития.</p>
-                    </template>
-                  </detail-modal>
-                </Teleport>
-              </div>
-              <div class="col-1 form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      <div class="page__content">
-        <h3>Рекламные компании</h3>
+        <div class="page__content">
+          <h3>Рекламные компании</h3>
 
           <div class="row">
-            <div class="col-6">
-                <p> Строительство домов в Украине</p>
+            <div class="col-10 col-lg-6">
+              <p>Строительство домов в Украине</p>
             </div>
-            <div class="col-1 form-check form-switch">
-              <input class="form-check-input" id="ad-check-1" type="checkbox" checked>
+            <div class="col-2 col-lg-1 ">
+              <div class="form-check form-switch">
+                <input
+                  id="ad-check-1"
+                  class="form-check-input"
+                  type="checkbox"
+                  checked
+                />
+              </div>
             </div>
-            <div class="col-3">
-              <select  class="content__dropdown">
+            <div class="col-12 col-lg-3">
+              <select class="content__dropdown">
                 <option>Мгновенно</option>
                 <option>1 раз в день</option>
                 <option>Отключить</option>
@@ -174,13 +237,19 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-6">
-                <p> Строительство домов в Украине</p>
+            <div class="col-10 col-lg-6">
+              <p>Строительство домов в Украине</p>
             </div>
-            <div class="col-1 form-check form-switch">
-              <input class="form-check-input" id="ad-check-1" type="checkbox">
+            <div class="col-2 col-lg-1">
+              <div class="form-check form-switch">
+                <input
+                  id="ad-check-1"
+                  class="form-check-input"
+                  type="checkbox"
+                />
+              </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-lg-3">
               <select class="content__dropdown">
                 <option>Мгновенно</option>
                 <option>1 раз в день</option>
@@ -189,51 +258,67 @@
             </div>
           </div>
         </div>
-      <div>
-        <button class="btn btn-primary btn-default">По умолчанию</button>
-        <button class="btn btn-primary btn-save" id="show-modal" @click="showSaveModal = true">Сохранить изменения</button>
-                <Teleport to="body">
-                  <save-modal :show="showSaveModal" @save="saveAction()" @close="showSaveModal = false">
-                    <template #header>
-                      <h3>Вы уверены?</h3>
-                    </template>
-                  </save-modal>
-                </Teleport>
+        <div>
+          <button class="btn btn-primary btn-default">
+            По умолчанию
+          </button>
+          <button
+            id="show-modal"
+            class="btn btn-primary btn-save"
+            @click="showSaveModal = true"
+          >
+            Сохранить изменения
+          </button>
+          <Teleport to="body">
+            <save-modal
+              :show="showSaveModal"
+              @save="saveAction()"
+              @close="showSaveModal = false"
+            >
+              <template #header>
+                <h3>Вы уверены?</h3>
+              </template>
+            </save-modal>
+          </Teleport>
+        </div>
       </div>
     </div>
-    
   </div>
 </template>
 
 <script>
-import SaveModal from './SaveModal.vue';
-import DetailModal from './DetailModal.vue';
+import TooltipItem from "./TooltipItem.vue";
+import TagList from "./TagList.vue";
+import SaveModal from "./SaveModal.vue";
+import DetailsSection from "./DetailsSection";
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   components: {
     SaveModal,
-    DetailModal
+    DetailsSection,
+    TooltipItem,
+    TagList,
   },
   props: {
-    msg: String
+    msg: String,
   },
   data() {
-    return{
-      showDetailModal:false,
+    return {
       showSaveModal: false,
-      btn: true
-    }
+      list1: ["Seo", "Продвижение", "Аналитика"],
+      list2: ["Seo", "Продвижение"],
+      list3: ["Seo", "Продвижение", "Аналитика"],
+      list4: ["Биржи ссылок: Не обнаружен"],
+    };
   },
-  methods:{
-    saveAction(){
+  methods: {
+    saveAction() {
       alert("Сохранено");
-      this.showModal = false;
+      this.showSaveModal = false;
     },
-    toggle() {
-      this.btn = false;
-    }
-  }
-}
+    removeListItem(list, index) {
+      list.splice(index, 1);
+    },
+  },
+};
 </script>
-
-
