@@ -66,7 +66,7 @@
               </p>
             </div>
           </div>
-          <div class="col-2 col-lg-1 px-0">
+          <div class="col-2 col-lg-1">
             <div class="form-check form-switch">
               <input
                 id="general-check-3"
