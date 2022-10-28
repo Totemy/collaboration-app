@@ -1,11 +1,23 @@
+body{
+    //background-image: url(/public/images/cola.png);
+    background-repeat: no-repeat;
+    background-position-x: left;
+    font-family:  'Roboto', sans-serif;;
+}
 .page{
     &__container{
-        @include media-breakpoint-up(lg) { margin: 100px 50px 50px 100px;}
+        @include media-breakpoint-up(lg) { 
+            max-width: 1045px;
+            margin:240px 50px 50px 200px;}
     }
-    &__header{
-        max-width: 1000px;
+    &__description{
+        font-family: 'Inter', sans-serif;
+        font-size: 22px;
+        margin-left: 3px;
+        margin-bottom: 26px;
     }
-    &__content{
-        padding-top: 20px;
+    &__telegram{
+        margin-top: 50px;
+        padding-bottom: 30px;
     }
 }

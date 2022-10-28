@@ -5,11 +5,7 @@
     }
     
 }
-.article{
-    &__subtext{
-        font-size: 14px;
-    }
-}
+
 .info-box{
     display: inline;
 }
@@ -24,6 +20,24 @@ option{
     color: #858585;
     border-radius: 0px;
 
+}
+.settings{
+    &__container{
+        padding-bottom: 40px ;
+    }
+    &__item{
+        padding-bottom: 20px;
+    }
+    &__title{
+        padding-bottom: 20px;
+    }
+    &__details{
+        width: 336px;
+        font-size: 14px;
+    }
+    &__ad{
+        padding-bottom: 50px;
+    }
 }
 
 
